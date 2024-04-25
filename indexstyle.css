@@ -1,0 +1,156 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    background-image:url("img/앨범_201.jpg");
+    background-size: 120%; /* 이미지 크기를 키웁니다. */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+nav {
+    background-color: white;
+    text-align: right;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline-block;
+    margin: 0 10px;
+}
+
+nav ul li a {
+    color: #e42d2d;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s ease; /* 전환 효과 */
+}
+
+nav ul li a:hover {
+    /* text-decoration: underline; */ /*호버시 언더라인 */
+    color: rgb(199, 199, 199); /* 호버시 색상 */
+}
+
+
+
+footer {
+    position: fixed; /* 페이지 맨 아래에 고정 */
+    bottom: 0;
+    left: 0;
+    width: 97%;
+    
+    background-color: none;
+    color: #ff8ab3;
+    font-size: 20px;
+    text-align: right;
+    padding: 20px;
+}
+
+.social-links {
+    display: inline-block;
+    margin-left: 20px;
+}
+
+.social-links a {
+    text-decoration: none; /* 기본 언더라인 제거 */
+    transition: padding 0.3s ease; /* 전환 효과 */
+    text-decoration: none;
+    color: #ff8ab3;
+    padding: 5px 10px;
+}
+
+.social-links a:hover {
+    text-decoration: underline;
+    padding-bottom: 10px;
+}
+
+/* .social-links a:hover {
+    background-color: #555;
+    border-radius: 5px;
+} */
+
+
+
+/* 햄버거버튼 */
+.container {
+    position: relative;
+}
+
+.hamburger {
+    display: block;
+    width: 30px;
+    height: 2px;
+    background-color: #ff8ab3;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    margin-bottom: 200px; /* 햄버거 버튼 아래에 간격을 띄우도록 설정 */
+}
+
+.hamburger::before,
+.hamburger::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: #ff8ab3;
+    position: absolute;
+    transition: transform 0.3s ease;
+}
+
+.hamburger::before {
+    top: -10px;
+}
+
+.hamburger::after {
+    bottom: -10px;
+}
+
+.open .hamburger {
+    background-color: transparent;
+}
+
+.open .hamburger::before {
+    transform: translateY(10px) rotate(45deg);
+}
+
+.open .hamburger::after {
+    transform: translateY(-10px) rotate(-45deg);
+}
+
+.menu {
+    display: none;
+    position: absolute;
+    top: 50px;
+    left: 20px;
+    background-color: #ffe4ee;
+
+    padding: 20px; /* 메뉴 내용과 외곽 사이에 간격을 띄우도록 설정 */
+    border-radius: 5px; /* 메뉴의 모서리를 둥글게 만듭니다. */
+}
+
+.menu.open {
+    display: block;
+}
+
+.menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex; /* 기본값은 가로로 나열이므로 세로로 나열하려면 수정이 필요 */
+    flex-direction: column; /* 세로로 나열하도록 지정 */
+}
+
+.menu li {
+    margin-bottom: 10px;
+}
+
+.menu a {
+    text-decoration: none;
+    color: #ff8ab3;
+}
